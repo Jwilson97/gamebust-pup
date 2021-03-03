@@ -1,0 +1,11 @@
+<%= simple_form_for [@user, @game]do |f| %>
+  <div class="form-group">
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :price %>
+    <%= f.input :category %>
+    <%= f.input :console %>
+    <%= f.input :photo, as: :file %>
+  </div>
+  <%= c.submit class: 'btn btn-primary' %>
+<% end %>
