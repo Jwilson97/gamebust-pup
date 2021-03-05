@@ -3,7 +3,7 @@ class RentalsController < ApplicationController
      @rental = Rental.new(rental_params)
      @rental.save
     if @rental.save
-      redirect_to new_grental_path(@rental)
+      redirect_to new_rental_path(@rental)
     else
       render :new
     end
