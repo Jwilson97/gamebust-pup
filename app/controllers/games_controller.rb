@@ -1,27 +1,26 @@
 class GamesController < ApplicationController
 
- def index
+   def index
       @games = Game.all
    end
 
     def show
-       @game = Game.find(params[:id])
+      @game = Game.find(params[:id])
     end
 
   def create
-     @game = Game.new(params[:game])
+     @game = Game.new(game_params)
      @game.save
-    # if @game.save
-    #   redirect_to new_game_path(@game)
-    # else
-    #   render :new
-    # end
+    if @game.save
+      redirect_to new_game_path(@game)
+    else
+      render :new
+    end
   end
 
-private
+  private
 
-  # def game_params
-  #   params.require(:game).permit(:name, :photo, :description)
-  # end
-
+  def game_params
+    params.require(:game).permit(:title, :description, :price, :console, :category)
+  end
 end
