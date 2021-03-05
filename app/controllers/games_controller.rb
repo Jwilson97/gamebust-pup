@@ -1,12 +1,16 @@
 class GamesController < ApplicationController
 
-   def index
-      @games = Game.all
-   end
+  def index
+    @games = Game.all
+  end
 
-    def show
-      @game = Game.find(params[:id])
-    end
+  def new
+    @game = Game.new
+  end
+
+  def show
+    @game = Game.find(params[:id])
+  end
 
   def create
      @game = Game.new(game_params)
@@ -21,6 +25,6 @@ class GamesController < ApplicationController
   private
 
   def game_params
-    params.require(:game).permit(:title, :description, :price, :console, :category)
+    params.require(:game).permit(:title, :description, :price, :console, :category, :photo)
   end
 end
