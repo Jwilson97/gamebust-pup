@@ -1,1 +1,8 @@
-_form
+<%= simple_form_for [@game, @rental]do |f| %>  <!--  not sure about the syntax here -->
+  <div class="form-group">
+    <%= f.input :start_date, as: :date %>
+    <%= f.input :end_date, as: :date %>
+    <%= f.input :status %>
+  </div>
+  <%= c.submit class: 'btn btn-primary' %>
+<% end %>
