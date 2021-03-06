@@ -5,10 +5,13 @@ class RentalsController < ApplicationController
   end
 
   def create
+     @game = Game.find(params[:game_id])
      @rental = Rental.new(rental_params)
+     @rental.user = current_user
+     @rental.game = @game
      @rental.save
     if @rental.save
-      redirect_to new_rental_path(@rental)
+      redirect_to rentals_path
     else
       render :new
     end
@@ -17,6 +20,6 @@ class RentalsController < ApplicationController
   private
 
   def rental_params
-    params.require(:game).permit(:start_date, :end_date)
+    params.require(:rental).permit(:start_date, :end_date)
   end
 end
