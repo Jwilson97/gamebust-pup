@@ -1,0 +1,5 @@
+<h1>My Rentals Status</h1>
+
+<% @user.rentals.each do |rental| %>
+ <%= rental.game.title %> is <%= rental.status %>
+<% end %>

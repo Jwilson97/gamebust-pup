@@ -3,6 +3,8 @@
 <p><%= @game.price %></p>
 <p><%= @game.console %></p>
 <p><%= @game.category %></p>
+<p><%= @game.rental.status %></p>
+
 
 <% if @game.photo.attached? %>
     <%= cl_image_tag @game.photo.key, height: 300, width: 400, crop: :fill %>
