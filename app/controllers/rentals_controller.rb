@@ -1,4 +1,9 @@
 class RentalsController < ApplicationController
+  def new
+    @game = Game.find(params[:game_id])
+    @rental = Rental.new
+  end
+
   def create
      @rental = Rental.new(rental_params)
      @rental.save
