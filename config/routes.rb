@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   # post 'games', to: 'games#create'
   end
   get 'index/users/:id/rentals/:id', to: 'rentals#index'
-  get 'users/:id/games', to: 'users#games'
+  get '/my_games/', to: 'pages#my_games', as: 'my_games'
 end
 
