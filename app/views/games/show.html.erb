@@ -1,6 +1,5 @@
 <div class="container">
   <div class="d-flex">
-
     <div>
       <% if @game.photo.attached? %>
           <%= cl_image_tag @game.photo.key, height: 200, width: 200, crop: :fill, class: "card-img"%>
@@ -13,6 +12,7 @@
       <p><strong>Price: </strong><%= @game.price %></p>
       <p><strong>Console: </strong><%= @game.console %></p>
       <p><strong>Category: </strong><%= @game.category %></p>
+      <p><strong>Status: </strong><%= @game.rental.status %></p>
     </div>
 
   </div>
