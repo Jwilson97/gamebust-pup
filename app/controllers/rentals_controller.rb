@@ -1,7 +1,12 @@
 class RentalsController < ApplicationController
+  def new
+    @rental = Rental.find(params[:user_id])
+    @rental = Rental.new
+  end
+
   def create
-     @rental = Rental.new(rental_params)
-     @rental.save
+    @rental = Rental.new(rental_params)
+    @rental.save
     if @rental.save
       redirect_to new_rental_path(@rental)
     else

@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   # get "games/:id", to: "games#show", as: :game
   # post 'games', to: 'games#create'
   end
-  get 'index/users/:id/rentals/:id', to: 'rentals#index'
+  # get 'index/users/:id/rentals/:id', to: 'rentals#index'
+  get 'rentals', to: 'pages#rental', as: 'rentals'
   get 'users/:id/games', to: 'users#games'
 end
+
 

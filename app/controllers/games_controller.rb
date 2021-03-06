@@ -13,8 +13,8 @@ class GamesController < ApplicationController
   end
 
   def create
-     @game = Game.new(game_params)
-     @game.save
+    @game = Game.new(game_params)
+    @game.save
     if @game.save
       redirect_to new_game_path(@game)
     else
