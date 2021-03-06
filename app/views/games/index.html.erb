@@ -8,9 +8,10 @@
 
 <%= link_to "Upload a game", new_game_path %>
 
-
-<ul><% @games.each do |game|%>
+<!-- create cards with link to show page -->
+<!-- <ul><% @games.each do |game|%>
 <li> <%= game.title  %> </li>
 <% end %>
 </ul>
-
+ -->
+<%= render 'cards' %>
