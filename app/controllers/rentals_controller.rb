@@ -17,6 +17,6 @@ class RentalsController < ApplicationController
   private
 
   def rental_params
-    params.require(:game).permit(:start_date, :end_date, :status)
+    params.require(:game).permit(:start_date, :end_date)
   end
 end
