@@ -1,4 +1,4 @@
-<%= simple_form_for [@user, @game]do |f| %>
+<%= simple_form_for [@game] do |f| %>
   <div class="form-group">
     <%= f.input :title %>
     <%= f.input :description %>
@@ -7,5 +7,5 @@
     <%= f.input :console %>
     <%= f.input :photo, as: :file %>
   </div>
-  <%= c.submit class: 'btn btn-primary' %>
+  <%= f.submit class: 'btn btn-primary' %>
 <% end %>
