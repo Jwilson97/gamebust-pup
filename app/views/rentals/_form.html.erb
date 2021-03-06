@@ -1,8 +1,8 @@
-<%= simple_form_for [@rental] do |f| %>  <!--  not sure about the syntax here -->
+<%= simple_form_for [@rental] do |f| %>  
   <div class="form-group">
     <%= f.input :start_date %>
     <%= f.input :end_date %>
     <%= f.input :status %>
   </div>
-  <%= c.submit class: 'btn btn-primary' %>
+  <%= f.submit class: 'btn btn-primary' %>
 <% end %>
