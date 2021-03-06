@@ -1,11 +1,23 @@
-<h2><%= @game.title %></h2>
-<p><%= @game.description %></p>
-<p><%= @game.price %></p>
-<p><%= @game.console %></p>
-<p><%= @game.category %></p>
-<p><%= @game.rental.status %></p>
+<div class="container">
+  <div class="d-flex">
+    <div>
+      <% if @game.photo.attached? %>
+          <%= cl_image_tag @game.photo.key, height: 200, width: 200, crop: :fill, class: "card-img"%>
+      <% end %>
+    </div>
 
+    <div>
+      <h2><%= @game.title %></h2>
+      <p><strong>Description: </strong><%= @game.description %></p>
+      <p><strong>Price: </strong><%= @game.price %></p>
+      <p><strong>Console: </strong><%= @game.console %></p>
+      <p><strong>Category: </strong><%= @game.category %></p>
+      <p><strong>Status: </strong><%= @game.rental.status %></p>
+    </div>
 
-<% if @game.photo.attached? %>
-    <%= cl_image_tag @game.photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
+  </div>
+  <br>
+  <%= link_to "See popular games", games_path %>
+  <br>
+  <%= link_to "Rent this game", new_game_rental_path(@game.id) %>
+</div>
