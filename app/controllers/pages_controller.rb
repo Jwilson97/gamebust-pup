@@ -4,7 +4,12 @@ class PagesController < ApplicationController
   def home
   end
 
+
   def my_games
     @games = Game.where(user: current_user)
+  end
+
+  def rental
+    @user = current_user
   end
 end
