@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # get "games/:id", to: "games#show", as: :game
   # post 'games', to: 'games#create'
   end
+  get '/my_games/', to: 'pages#my_games', as: 'my_games'
   get 'rentals', to: 'pages#rental', as: 'rentals'
-  get 'users/:id/games', to: 'users#games'
 end
 
