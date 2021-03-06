@@ -13,15 +13,14 @@ class GamesController < ApplicationController
   end
 
   def create
-     @game = Game.new(game_params)
-     @game.user = current_user
-     @game.save
-     if @game.save
+    @game = Game.new(game_params)
+    @game.user = current_user
+    @game.save
+    if @game.save
       redirect_to game_path(@game)
-     else
-
+    else
       render :new
-     end
+    end
   end
 
   private
