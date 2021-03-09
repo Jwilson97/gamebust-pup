@@ -15,12 +15,16 @@
      </div>
 
   </div>
-  <%= link_to "Edit this game", edit_game_path %>
-  <br>
-  <%= link_to "Delete #{@game.title}",
-            game_path(@game),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
+  <% if policy(@game).edit?%>
+    <%= link_to "Edit this game", edit_game_path %>
+  <% end %>
+  </br>
+  <% if policy(@game).destroy?%>
+    <%= link_to "Delete #{@game.title}",
+              game_path(@game),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+  <% end %>
   </br>
   <%= link_to "See popular games", games_path %>
   <br>

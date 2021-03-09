@@ -1,7 +1,8 @@
 class GamesController < ApplicationController
 
   def index
-    @games = Game.all
+    # @games = Game.all
+    @games = policy_scope(Game)
   end
 
   def new
@@ -29,10 +30,12 @@ class GamesController < ApplicationController
 
   def edit
     @game = Game.find(params[:id])
+    authorize @game
   end
 
   def update
     @game = Game.find(params[:id])
+    authorize @game
     @game.update(game_params)
 
     redirect_to game_path(@game)
