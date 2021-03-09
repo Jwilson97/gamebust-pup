@@ -18,7 +18,7 @@
   <br>
   <%= link_to "See popular games", games_path %>
   <br>
-  <% if @rental == nil || @game.rentals[0] == nil || @game.rentals[0].status == false %>
+  <% if @game.rental == nil || @game.rental.status == false %>
     <%= link_to "Rent this game", new_game_rental_path(@game.id) %>
   <% else %>
     <%= "This game was rented" %>

@@ -2,6 +2,7 @@ class RentalsController < ApplicationController
   def new
     @game = Game.find(params[:game_id])
     @rental = Rental.new
+    # raise
   end
 
   def create
@@ -11,9 +12,10 @@ class RentalsController < ApplicationController
     @rental.game = @game
     @rental.save
     if @rental.save
-      @game.rentals.each do |rental|
-        rental.status = false
-      end
+      # @game.rentals.each do |rental|
+      #   rental.status = false
+      # end
+      @rental.status = false
       redirect_to rentals_path
     else
       render :new

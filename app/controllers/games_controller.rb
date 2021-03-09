@@ -1,5 +1,4 @@
 class GamesController < ApplicationController
-
   def index
     @games = Game.all
   end
@@ -10,9 +9,11 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
-    if @game.rentals != []
-      @rental = Rental.find(params[:id])
-    end
+    @game.user = current_user
+    # @rental.game = @game
+    # if @game.rentals != []
+    #   @rental = Rental.find(params[:id])
+    # end
     # raise
   end
 
