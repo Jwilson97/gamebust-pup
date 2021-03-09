@@ -27,8 +27,30 @@
     </div>
   </div>
 
-<hr>
-  <%= link_to "See popular games", games_path, class: "btn btn-outline-dark"%>
+  <hr>
+    <%= link_to "See popular games", games_path, class: "btn btn-outline-dark btn-block"%>
+  <hr>
 
+  <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <%= image_tag "pokemon_game.jpg", class: "d-block w-100", alt: "pokemon game"%>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag "samourai_showdown.jpg", class: "d-block w-100", alt: "samourai showdown"%>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag "nhl20-ps4.jpg", class: "d-block w-100", alt: "samourai showdown"%>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
 
 </div>
