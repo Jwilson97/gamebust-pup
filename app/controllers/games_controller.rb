@@ -27,6 +27,25 @@ class GamesController < ApplicationController
     end
   end
 
+  def edit
+    @game = Game.find(params[:id])
+  end
+
+  def update
+    @game = Game.find(params[:id])
+    @game.update(game_params)
+
+    redirect_to game_path(@game)
+  end
+
+  def destroy
+    @game = Game.find(params[:id])
+    @game.destroy
+
+    # no need for app/views/restaurants/destroy.html.erb
+    redirect_to games_path
+  end
+
   private
 
   def game_params
