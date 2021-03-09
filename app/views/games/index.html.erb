@@ -5,13 +5,10 @@
     <p>Ruin your life, learn to game</p>
   </div>
 </div>
+<div class="container">
+  <br>
+  <%= link_to "Upload a game", new_game_path, class: "btn btn-outline-dark" %>
+  <br>
+</div>
 
-<%= link_to "Upload a game", new_game_path %>
-
-<!-- create cards with link to show page -->
-<!-- <ul><% @games.each do |game|%>
-<li> <%= game.title  %> </li>
-<% end %>
-</ul>
- -->
 <%= render 'cards' %>
