@@ -1,13 +1,56 @@
+
+
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path "ps4_background.jpg" %>');">
+    <div class="container">
+      <h1>Welcome to GAMEBUST!</h1>
+      <p>The best place to find new games without paying for a new game</p>
+    </div>
+  </div>
+<br>
 <div class="container">
-  <h1>Pages#home</h1>
-  <p>Find me in app/views/pages/home.html.erb</p>
 
   <% if user_signed_in? %>
-  <p>
-    Welcome <%= current_user.email %>! Nice to see you 😃
-  </p>
-
+  <p class="welcome-text">Welcome <%= current_user.email %>!</p>
   <% end %>
 
-  <%= link_to "See popular games", games_path %>
+  <div class="cards">
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "ps4_play.jpg" %>')">
+      Playstation
+    </div>
+
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "switch_contollers.jpg" %>')">
+      Nintendo
+    </div>
+
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "xbox1.jpg" %>')">
+      Xbox
+    </div>
+  </div>
+
+  <hr>
+    <%= link_to "See popular games", games_path, class: "btn btn-outline-dark btn-block"%>
+  <hr>
+
+  <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <%= image_tag "pokemon_game.jpg", class: "d-block w-100", alt: "pokemon game"%>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag "samourai_showdown.jpg", class: "d-block w-100", alt: "samourai showdown"%>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag "nhl20-ps4.jpg", class: "d-block w-100", alt: "samourai showdown"%>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
 </div>
