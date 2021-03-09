@@ -2,7 +2,7 @@
   <div class="d-flex">
     <div>
       <% if @game.photo.attached? %>
-          <%= cl_image_tag @game.photo.key, height: 200, width: 200, crop: :fill, class: "card-img"%>
+        <%= cl_image_tag @game.photo.key, height: 200, width: 200, crop: :fill, class: "card-img"%>
       <% end %>
     </div>
 
@@ -18,5 +18,9 @@
   <br>
   <%= link_to "See popular games", games_path %>
   <br>
-  <%= link_to "Rent this game", new_game_rental_path(@game.id) %>
+  <% if @rental == nil || @game.rentals[0] == nil || @game.rentals[0].status == false %>
+    <%= link_to "Rent this game", new_game_rental_path(@game.id) %>
+  <% else %>
+    <%= "This game was rented" %>
+  <% end %>
 </div>

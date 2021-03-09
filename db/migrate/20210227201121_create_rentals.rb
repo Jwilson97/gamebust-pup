@@ -5,7 +5,7 @@ class CreateRentals < ActiveRecord::Migration[6.0]
       t.references :user, null: false, foreign_key: true
       t.date :start_date
       t.date :end_date
-      t.string :status
+      t.boolean :status, default: true
 
       t.timestamps
     end

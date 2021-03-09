@@ -10,6 +10,10 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
+    if @game.rentals != []
+      @rental = Rental.find(params[:id])
+    end
+    # raise
   end
 
   def create
