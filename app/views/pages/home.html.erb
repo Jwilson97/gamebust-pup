@@ -1,13 +1,34 @@
+
+
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path "ps4_background.jpg" %>');">
+    <div class="container">
+      <h1>Welcome to GAMEBUST!</h1>
+      <p>The best place to find new games without paying for a new game</p>
+    </div>
+  </div>
+<br>
 <div class="container">
-  <h1>Pages#home</h1>
-  <p>Find me in app/views/pages/home.html.erb</p>
 
   <% if user_signed_in? %>
-  <p>
-    Welcome <%= current_user.email %>! Nice to see you 😃
-  </p>
-
+  <p class="welcome-text">Welcome <%= current_user.email %>!</p>
   <% end %>
 
-  <%= link_to "See popular games", games_path %>
+  <div class="cards">
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "ps4_play.jpg" %>')">
+      Breakfast
+    </div>
+
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "switch_contollers.jpg" %>')">
+      Lunch
+    </div>
+
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "xbox1.jpg" %>')">
+      Dinner
+    </div>
+  </div>
+
+<hr>
+  <%= link_to "See popular games", games_path, class: "btn btn-outline-dark"%>
+
+
 </div>
