@@ -10,17 +10,22 @@ class RentalsController < ApplicationController
     @rental = Rental.new(rental_params)
     @rental.user = current_user
     @rental.game = @game
+    @rental.status = "request"
     @rental.save
     if @rental.save
-      # @game.rentals.each do |rental|
-      #   rental.status = false
-      # end
-      @rental.status = false
       redirect_to rentals_path
     else
       render :new
     end
     # raise
+  end
+
+  def approved
+    @rental.status == "approved"
+  end
+
+  def declined
+    @rental.status == "declined"
   end
 
   private

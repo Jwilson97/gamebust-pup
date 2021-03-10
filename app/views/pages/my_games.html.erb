@@ -7,6 +7,13 @@
 
 
 <%= render 'games/cards' %>
+<% @my_rentals.each do |rental| %>
+  <li>
+    <%= rental.game.title %>
+    <button type="button" class="btn btn-success">Approved</button>
+    <button type="button" class="btn btn-danger">Declined</button>
+  </li>
+<% end %>
 
 <br>
 

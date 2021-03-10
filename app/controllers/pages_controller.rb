@@ -4,9 +4,13 @@ class PagesController < ApplicationController
   def home
   end
 
-
   def my_games
     @games = Game.where(user: current_user)
+    rentals = @games.map do |game|
+      game.rentals
+    end
+    @my_rentals = rentals.flatten
+    # raise
   end
 
   def rental
