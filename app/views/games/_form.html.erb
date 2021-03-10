@@ -3,8 +3,8 @@
     <%= f.input :title %>
     <%= f.input :description %>
     <%= f.input :price %>
-    <%= f.input :category %>
-    <%= f.input :console %>
+    <%= f.input :category, input_html: { class: "beautiful-dropdown" }, include_hidden: false, prompt: "Select one", :collection => %w[First\ Person\ Shooter Survival Action-adventure Sports Role-playing Real-time\ strategy] %>
+    <%= f.input :console, input_html: { class: "beautiful-dropdown" }, include_hidden: false, prompt: "Select one", :collection => %w[Playstation\ 5 Playstation\ 4 Nintendo\ switch Xbox\ One  Xbox\ X/S] %>
     <%= f.input :photo, as: :file %>
   </div>
   <%= f.submit class: 'btn btn-primary' %>
