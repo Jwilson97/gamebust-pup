@@ -18,10 +18,13 @@ user.save
             title: Faker::Game.title,
             description: Faker::Marketing.buzzwords,
             price: rand(5..10),
-            console: Faker::Game.platform,
-            category: Faker::Game.genre,
+            console: %w[First\ Person\ Shooter Survival Action-adventure Sports Role-playing Real-time\ strategy].sample,
+            category: %w[Playstation\ 5 Playstation\ 4 Nintendo\ switch Xbox\ One  Xbox\ X/S].sample,
             user_id: user.id
         )
+    file = File.open("app/assets/images/gears.jpg")
+    game.photo.attach(io: file, filename: 'gears.jpg', content_type: 'image/jpg')
     game.save
 end
 
+# puts Dir.pwd
