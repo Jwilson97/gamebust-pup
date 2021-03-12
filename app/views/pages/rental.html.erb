@@ -2,6 +2,6 @@
 
 <% @user.rentals.each do |rental| %>
   <li>
-    Game <%= rental.game.title %> is rented from <%= rental.start_date %> to <%= rental.end_date %>
+    My requested for Game <%= rental.game.title %> from <%= rental.start_date %> to <%= rental.end_date %> is <%= rental.status %>
   </li>
 <% end %>

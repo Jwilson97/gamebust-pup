@@ -18,15 +18,11 @@
   <br>
   <%= link_to "See popular games", games_path %>
   <br>
-  <% if @game.rentals == [] %>
-    <%= link_to "Rent this game", new_game_rental_path(@game.id) %>
-  <% else %>
-    <% @game.rentals.each do |rental| %>
-      <% if rental.status == "approved" %>
-        <%= "This game was rented" %>
-      <% else %>
-        <%= link_to "Rent this game", new_game_rental_path(@game.id) %>
-      <% end %>
+  <%= link_to "Rent this game", new_game_rental_path(@game.id) %>
+  <br>
+  <% @game.rentals.each do |rental| %>
+    <% if rental.status == "approved" %>
+      <%= "This game is no longer available" %>
     <% end %>
   <% end %>
 </div>

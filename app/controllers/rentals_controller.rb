@@ -10,7 +10,7 @@ class RentalsController < ApplicationController
     @rental = Rental.new(rental_params)
     @rental.user = current_user
     @rental.game = @game
-    @rental.status = "request"
+    @rental.status = "pending"
     @rental.save
     if @rental.save
       redirect_to rentals_path
@@ -20,12 +20,22 @@ class RentalsController < ApplicationController
     # raise
   end
 
-  def approved
-    @rental.status == "approved"
+  def approve
+    @game = Game.find(params[:game_id])
+    @rental = Rental.find_by_id(params[:id])
+    if @rental.user_id == current_user.id
+      @rental.status = "approved"
+      @rental.save
+    end
   end
 
-  def declined
-    @rental.status == "declined"
+  def decline
+    @game = Game.find(params[:game_id])
+    @rental = Rental.find_by_id(params[:id])
+    if @rental.user_id == current_user.id
+      @rental.status = "declined"
+      @rental.save
+    end
   end
 
   private
