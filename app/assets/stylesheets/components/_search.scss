@@ -1,0 +1,56 @@
+
+.search-bar {
+  position: relative;
+  width: 400px;
+}
+
+.search-bar i {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  pointer-events: none;
+
+}
+
+.search-bar input {
+  padding-right: 30px;
+
+}
+
+
+@media (max-width: 920px) {
+  .search-bar {
+    width: 250px;
+  }
+}
+
+@media (max-width: 747px) {
+  .search-bar {
+    width: 120px;
+  }
+}
+
+@media (max-width: 615px) {
+  .search-bar {
+    width: 100px;
+  }
+
+  .navbar-lewagon .navbar-brand img {
+     width: 40px;
+  }
+}
+
+@media (max-width: 575px) {
+  .search-bar {
+    width: 70%;
+  }
+}
+
+@media (max-width: 405px) {
+  .search-bar {
+    width: 60%;
+  }
+}
+
+
+
