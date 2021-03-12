@@ -20,17 +20,23 @@
   <h1 class="headers">Search by Console</h1>
 
   <div class="cards">
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "ps4_play.jpg" %>')">
-      Playstation
-    </div>
+    <%= link_to "/games?query=playstation" do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "ps4_play.jpg" %>')">
+        Playstation
+      </div>
+    <% end %>
 
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "switch_contollers.jpg" %>')">
-      Nintendo
-    </div>
+    <%= link_to "/games?query=nintendo" do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "switch_contollers.jpg" %>')">
+        Nintendo
+      </div>
+    <% end %>
 
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "xbox1.jpg" %>')">
-      Xbox
-    </div>
+    <%= link_to "/games?query=xbox" do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "xbox1.jpg" %>')">
+        Xbox
+      </div>
+    <% end %>
   </div>
 
   <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
