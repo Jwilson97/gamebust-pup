@@ -1,4 +1,6 @@
 class RentalsController < ApplicationController
+  before_action :skip_authorization
+
   def new
     @game = Game.find(params[:game_id])
     @rental = Rental.new
