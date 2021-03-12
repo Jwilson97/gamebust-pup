@@ -2,6 +2,18 @@
   <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "GameBust_logo.png" %>
     <% end %>
+    <div class="search-bar">
+    <i class="fas fa-search"></i>
+     <%= form_tag games_path, method: :get do %>
+      <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a Game"
+           %>
+           <%# submit_tag "Search", class: "btn btn-primary" %>
+           <% end %>
+    </div>
+
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -13,9 +25,6 @@
       <% if user_signed_in? %>
         <li class="nav-item active">
           <%= link_to "Home", root_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "All Games", games_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "All Games", games_path, class: "nav-link" %>
