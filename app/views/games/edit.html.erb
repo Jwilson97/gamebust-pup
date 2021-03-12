@@ -1,8 +1,7 @@
 <div class="container">
-  <h1>New Rental Game</h1>
+  <h1>Edit <%= @game.title %></h1>
 
   <%= render 'form', game: @game %>
-
   <hr>
   <%= link_to games_path do %>
     <i class="fa fa-history"></i> Back to all games

@@ -2,6 +2,18 @@
   <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "GameBust_logo.png" %>
     <% end %>
+    <div class="search-bar">
+    <i class="fas fa-search"></i>
+     <%= form_tag games_path, method: :get do %>
+      <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a Game"
+           %>
+           <%# submit_tag "Search", class: "btn btn-primary" %>
+           <% end %>
+    </div>
+
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -12,7 +24,10 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
+          <%= link_to "Home", root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "All Games", games_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "My Games", my_games_path, class: "nav-link" %>
@@ -21,7 +36,7 @@
           <%= link_to "Rentals", rentals_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= image_tag "https://cdn3.iconfinder.com/data/icons/foody-2/64/mushroom_game_Mario_food-512.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Action", "#", class: "dropdown-item" %>
             <%= link_to "Another action", "#", class: "dropdown-item" %>

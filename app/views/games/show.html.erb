@@ -1,22 +1,42 @@
 <div class="container">
-  <div class="d-flex">
-    <div>
-      <% if @game.photo.attached? %>
-        <%= cl_image_tag @game.photo.key, height: 200, width: 200, crop: :fill, class: "card-img"%>
-      <% end %>
+  <div class="show shadow">
+    <h2 class="font-weight-bold"><%= @game.title %></h2>
+    <div class="d-flex info">
+      <div>
+        <% if @game.photo.attached? %>
+            <%= cl_image_tag @game.photo.key, height: 200, width: 200, crop: :fill, class: "show-img shadow"%>
+        <% end %>
+      </div>
+
+
+      <div class="show-info">
+
+        <h4 class="price"><strong>Price: </strong>   $<%= @game.price %></h4>
+        <p><strong>Console: </strong><%= @game.console %></p>
+        <p class="cat"><strong>Category: </strong><%= @game.category %></p>
+        <p><strong>Description: </strong><%= @game.description %></p>
+       </div>
+        <%= link_to "Rent me", new_game_rental_path(@game.id), class: "btn btn-danger btn-lg shadow" %>
     </div>
-
-    <div>
-      <h2><%= @game.title %></h2>
-      <p><strong>Description: </strong><%= @game.description %></p>
-      <p><strong>Price: </strong><%= @game.price %></p>
-      <p><strong>Console: </strong><%= @game.console %></p>
-      <p><strong>Category: </strong><%= @game.category %></p>
+      <div class="d-flex">
+        <div>
+          <% if policy(@game).edit?%>
+            <%= link_to "Edit this game", edit_game_path, class: "btn btn-outline-danger" %>
+          <% end %>
+        </div>
+        <div>
+          <% if policy(@game).destroy?%>
+            <%= link_to "Delete #{@game.title}",
+                    game_path(@game),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger" %>
+           <% end %>
+         </div>
      </div>
-
   </div>
-  <br>
-  <%= link_to "See popular games", games_path %>
+
+  </br>
+  <%= link_to "See popular games", games_path, class: "btn btn-dark" %>
   <br>
   <%= link_to "Rent this game", new_game_rental_path(@game.id) %>
   <br>
@@ -26,3 +46,4 @@
     <% end %>
   <% end %>
 </div>
+
