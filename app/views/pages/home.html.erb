@@ -8,7 +8,17 @@
   </div>
 <br>
 <div class="container">
-  <h1 class="headers">Seach by Console</h1>
+
+  <div class="card-trip">
+    <div class="banner-text">
+      <h2>Find your next favourite game from our amazing catalog</h2>
+      <p>Play whenever you want and exchange games easily</p>
+      <%= link_to "See popular games", games_path, class: "btn btn-secondary"%>
+    </div>
+  </div>
+
+  <h1 class="headers">Search by Console</h1>
+
   <div class="cards">
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "ps4_play.jpg" %>')">
       Playstation
@@ -22,10 +32,6 @@
       Xbox
     </div>
   </div>
-
-  <hr>
-    <%= link_to "See popular games", games_path, class: "btn btn-outline-dark btn-block"%>
-  <hr>
 
   <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
     <div class="carousel-inner">
