@@ -39,6 +39,59 @@
     <% end %>
   </div>
 
+  <h1 class="headers">Search by Category</h1>
+
+  <div class="cards">
+    <%= link_to "/games?query=first+person" do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "first-person.jpg" %>')">
+        First Person
+      </div>
+    <% end %>
+
+    <%= link_to "/games?query=action" do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "action-adventure.jpg" %>')">
+        Action
+      </div>
+    <% end %>
+
+    <%= link_to "/games?query=real+time" do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "real-time.jpg" %>')">
+        Real Time
+      </div>
+    <% end %>
+
+    <%= link_to "/games?query=role+playing" do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "role-playing.png" %>')">
+        Role Playing
+      </div>
+    <% end %>
+
+    <%= link_to "/games?query=shooter" do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "shooter.jpg" %>')">
+        Shooter
+      </div>
+    <% end %>
+    
+    <%= link_to "/games?query=sports" do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "sports.jpg" %>')">
+        Sports
+      </div>
+    <% end %>
+
+    <%= link_to "/games?query=strategy" do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "strategy.jpg" %>')">
+        Strategy
+      </div>
+    <% end %>
+
+    <%= link_to "/games?query=survival" do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "survival.jpg" %>')">
+        Survival
+      </div>
+    <% end %>
+
+  </div>
+
   <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
