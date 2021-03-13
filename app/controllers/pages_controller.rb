@@ -6,14 +6,14 @@ class PagesController < ApplicationController
 
   def my_games
     @games = Game.where(user: current_user)
-    rentals = @games.map do |game|
-      game.rentals
-    end
-    @my_rentals = rentals.flatten
-    # raise
+    # rentals = @games.map do |game|
+    #   game.rentals
+    # end
+    # @my_rentals = rentals.flatten
+    @my_rentals = current_user.incoming_rentals
   end
 
   def rental
-    @user = current_user
+    @my_rentals = current_user.rentals
   end
 end
