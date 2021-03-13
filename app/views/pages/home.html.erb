@@ -6,8 +6,7 @@
   </div>
 <br>
 <div class="container">
-
-  <div class="card-trip" style="background-image: url('<%= image_path "homepage-herobanner.jpg" %>')">
+  <div class="home-card-trip" style="background-image: url('<%= image_path "homepage-herobanner.jpg" %>')">
     <div class="banner-text">
       <h2>Find your next favourite game from our amazing catalog</h2>
       <p>Play whenever you want and exchange games easily</p>
@@ -69,7 +68,7 @@
         Shooter
       </div>
     <% end %>
-    
+
     <%= link_to "/games?query=sports" do %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "sports.jpg" %>')">
         Sports
