@@ -42,7 +42,7 @@ class GamesController < ApplicationController
     authorize @game
     @game.update(game_params)
 
-    redirect_to game_path(@game)
+    redirect_to my_games_path
   end
 
   def destroy
