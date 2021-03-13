@@ -16,10 +16,10 @@ user.save
 5.times do
     game = Game.new(
             title: Faker::Game.title,
-            description: Faker::Marketing.buzzwords,
             price: rand(5..10),
             console: %w[First\ Person\ Shooter Survival Action-adventure Sports Role-playing Real-time\ strategy].sample,
             category: %w[Playstation\ 5 Playstation\ 4 Nintendo\ switch Xbox\ One  Xbox\ X/S].sample,
+            description: Faker::Marketing.buzzwords,
             user_id: user.id
         )
     file = File.open("app/assets/images/gears.jpg")

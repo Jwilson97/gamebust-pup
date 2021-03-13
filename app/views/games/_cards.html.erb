@@ -1,12 +1,10 @@
 <div class="container">
   <div class="row-container">
     <div class="row">
-      <% @games.each do |game|%>
+      <% @games.reverse_each do |game|%>
       <div class="col-12 col-9 col-3">
         <div class="card-trip">
-          <% if game.photo.attached? %>
             <%= cl_image_tag game.photo.key, height: 200, crop: :fill, class: "card-img-top" %>
-          <% end %>
           <div class="card-trip-infos">
             <div>
               <h2><%= link_to game.title, game_path(game.id) %></h2>

@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="show shadow">
+  <div class="show-card shadow">
     <h2 class="font-weight-bold"><%= @game.title %></h2>
     <div class="d-flex info">
       <div>
@@ -32,7 +32,7 @@
       <div class="d-flex">
         <div>
           <% if policy(@game).edit?%>
-            <%= link_to "Edit this game", edit_game_path, class: "btn btn-outline-danger" %>
+            <%= link_to "Edit me", edit_game_path, class: "btn btn-outline-danger" %>
           <% end %>
         </div>
         <div>
