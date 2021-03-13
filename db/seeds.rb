@@ -13,7 +13,7 @@ user = User.new(
 puts "#{user} created"
 user.save
 
-5.times do
+14.times do
     game = Game.new(
             title: Faker::Game.title,
             price: rand(5..10),
