@@ -11,16 +11,20 @@
   <%= render 'games/cards' %>
 
 
-  <div>
-    <h1>Someone Want to Rent Your Game</h1>
+  <div class="rental-inqury row">
     <div class="d-flex flex-column">
+      <h1>Rental Inquries</h1>
       <% @my_rentals.each do |rental| %>
         <div class="card-product">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <%= cl_image_tag rental.game.photo.key, height: 200, crop: :fill, class: "card-img-top" %>
           <div class="card-product-infos">
-            Request for game <%= rental.game.title %> from <%= rental.start_date %> to <%= rental.end_date %>
-            <%= link_to "Approved".html_safe, approve_game_rental_path(rental.game_id, rental.id,  {status: 'approved'}), method: :put, class: "btn btn-success" %>
-            <%= link_to "Declined".html_safe, decline_game_rental_path(rental.game_id, rental.id,  {status: 'declined'}), method: :put, class: "btn btn-danger" %>
+            <h2>
+              Request for game <%= rental.game.title %> from <%= rental.start_date %> to <%= rental.end_date %>
+            </h2>
+            <p>
+              <%= link_to "APPROVE".html_safe, approve_game_rental_path(rental.game_id, rental.id,  {status: 'approved'}), method: :put, class: "btn btn-success" %>
+              <%= link_to "DECLINE".html_safe, decline_game_rental_path(rental.game_id, rental.id,  {status: 'declined'}), method: :put, class: "btn btn-outline-danger" %>
+            </p>
           </div>
         </div>
       <% end %>
