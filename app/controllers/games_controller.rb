@@ -42,15 +42,16 @@ class GamesController < ApplicationController
     authorize @game
     @game.update(game_params)
 
-    redirect_to game_path(@game)
+    redirect_to my_games_path
   end
 
   def destroy
     @game = Game.find(params[:id])
     @game.destroy
+    authorize @game
 
     # no need for app/views/restaurants/destroy.html.erb
-    redirect_to games_path
+    redirect_to my_games_path
   end
 
   private
