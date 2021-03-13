@@ -1,5 +1,4 @@
 class GamesController < ApplicationController
-
   def index
     # @games = Game.all
     if params[:query].present?
@@ -16,6 +15,7 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
+    # raise
     authorize @game
   end
 
