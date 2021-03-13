@@ -14,7 +14,7 @@
   <div class="rental-inqury row">
     <div class="d-flex flex-column">
       <h1>Rental Inquiry</h1>
-      <% @my_rentals.each do |rental| %>
+      <% @my_rentals.reverse_each do |rental| %>
         <div class="card-product">
           <%= cl_image_tag rental.game.photo.key, height: 200, crop: :fill, class: "card-img-top" %>
           <div class="card-product-infos">
