@@ -20,10 +20,10 @@
         <div>
           <%= link_to "Rent me", new_game_rental_path(@game.id), class: "btn btn-danger btn-lg shadow" %>
         </div>
-        <div class="btn btn-secondary btn-lg disabled shadow">
+        <div>
           <% @game.rentals.each do |rental| %>
             <% if rental.status == "approved" %>
-                Already Rented!
+              <button type="button" class="btn btn-secondary btn-lg disabled shadow" disabled>Already Rented!</button>
             <% end %>
           <% end %>
         </div>
