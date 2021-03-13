@@ -1,15 +1,24 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://meeplesgames.com/wp-content/uploads/2017/11/Picture-6r.png);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path "game_collection.jpg" %>');">
   <div class="container">
-    <h1>My Rentals Status</h1>
-    <p>Cross your fingers, Wait for decision</p>
+    <h1>Rentals</h1>
+    <p>Wait for your fate</p>
   </div>
 </div>
 <div class="container">
-
-  <% @user.rentals.each do |rental| %>
-    <li>
-      My requested for Game <%= rental.game.title %> from <%= rental.start_date %> to <%= rental.end_date %> is <%= rental.status %>
-    </li>
-  <% end %>
-
+<div>
+    <h1>Your rental requests</h1>
+    <div class="d-flex flex-column">
+      <% @my_rentals.each do |rental| %>
+      <div class="card-product">
+      <%= cl_image_tag rental.game.photo.key, height: 200, crop: :fill, class: "card-img-top" %>
+        <div class="card-product-infos">
+          <%# @user.rentals.each do |rental| %>
+      <%= rental.game.user.email %> copy of <%= rental.game.title %> from <%= rental.start_date %> to <%= rental.end_date %> is <%= rental.status %>
+    </div>
+   </div>
+  <%# end %>
+<% end %>
 </div>
+
+
+
