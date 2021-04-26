@@ -1,3 +1,9 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .footer {
   background: white;
   display: flex;
@@ -9,9 +15,10 @@
   width: 100vw;
   bottom: 0;
   left: 0;
-  position: fixed;
+
   z-index: 1;
   opacity: .7;
+  margin-top: auto;
 }
 .footer-links {
   display: flex;
