@@ -4,20 +4,22 @@
     <p>Wait for your fate</p>
   </div>
 </div>
+
 <div class="container">
-<div>
-    <h1>Your rental requests</h1>
-    <div class="d-flex flex-column">
-      <% @my_rentals.reverse_each do |rental| %>
-      <div class="card-product">
-      <%= cl_image_tag rental.game.photo.key, height: 200, crop: :fill, class: "card-img-top" %>
-        <div class="card-product-infos">
-          <%# @user.rentals.each do |rental| %>
-      <%= rental.game.user.email %> copy of <%= rental.game.title %> from <%= rental.start_date %> to <%= rental.end_date %> is <%= rental.status %>
+  <div>
+      <h1 class="mt-2">Your rental requests</h1>
+      <div class="d-flex flex-column">
+        <% @my_rentals.reverse_each do |rental| %>
+        <div class="card-product">
+        <%= cl_image_tag rental.game.photo.key, height: 200, crop: :fill, class: "card-img-top" %>
+          <div class="card-product-infos">
+            <%# @user.rentals.each do |rental| %>
+            <%= rental.game.user.email %> copy of <%= rental.game.title %> from <%= rental.start_date %> to <%= rental.end_date %> is <%= rental.status %>
+          </div>
+        </div>
+      <% end %>
     </div>
-   </div>
-  <%# end %>
-<% end %>
+  </div>
 </div>
 
 

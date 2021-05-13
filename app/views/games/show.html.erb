@@ -1,50 +1,51 @@
 <div class="container">
   <div class="show">
-  <div class="show-card shadow">
-    <h2 class="font-weight-bold"><%= @game.title %></h2>
-    <div class="d-flex info">
-      <div>
-        <% if @game.photo.attached? %>
-            <%= cl_image_tag @game.photo.key, height: 200, width: 200, crop: :fill, class: "show-img shadow"%>
-        <% end %>
-      </div>
-
-
-      <div class="show-info">
-
-        <h4 class="price"><strong>Price: </strong>   $<%= @game.price %></h4>
-        <p><strong>Console: </strong><%= @game.console %></p>
-        <p class="cat"><strong>Category: </strong><%= @game.category %></p>
-        <p><strong>Description: </strong><%= @game.description %></p>
-      </div>
-      <div class="d-flex flex-column">
+    <div class="show-card shadow">
+      <h2 class="font-weight-bold"><%= @game.title %></h2>
+      <div class="d-flex info">
         <div>
-          <%= link_to "Rent me", new_game_rental_path(@game.id), class: "btn btn-danger btn-lg shadow" %>
-        </div>
-        <div>
-          <% @game.rentals.each do |rental| %>
-            <% if rental.status == "approved" %>
-              <button type="button" class="btn btn-secondary btn-lg disabled shadow" disabled>Already Rented!</button>
-            <% end %>
+          <% if @game.photo.attached? %>
+              <%= cl_image_tag @game.photo.key, height: 200, width: 200, crop: :fill, class: "show-img shadow"%>
           <% end %>
         </div>
+
+
+        <div class="show-info">
+
+          <h4 class="price"><strong>Price: </strong>   $<%= @game.price %></h4>
+          <p><strong>Console: </strong><%= @game.console %></p>
+          <p class="cat"><strong>Category: </strong><%= @game.category %></p>
+          <p><strong>Description: </strong><%= @game.description %></p>
+        </div>
+        <div class="d-flex flex-column">
+          <div>
+            <%= link_to "Rent me", new_game_rental_path(@game.id), class: "btn btn-danger btn-lg shadow" %>
+          </div>
+          <div>
+            <% @game.rentals.each do |rental| %>
+              <% if rental.status == "approved" %>
+                <button type="button" class="btn btn-secondary btn-lg disabled shadow" disabled>Already Rented!</button>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+        <div class="d-flex">
+          <div>
+            <% if policy(@game).edit?%>
+              <%= link_to "Edit me", edit_game_path, class: "btn btn-outline-danger" %>
+            <% end %>
+          </div>
+          <div>
+            <% if policy(@game).destroy?%>
+              <%= link_to "Delete #{@game.title}",
+                      game_path(@game),
+                      method: :delete,
+                      data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger" %>
+            <% end %>
+          </div>
       </div>
     </div>
-      <div class="d-flex">
-        <div>
-          <% if policy(@game).edit?%>
-            <%= link_to "Edit me", edit_game_path, class: "btn btn-outline-danger" %>
-          <% end %>
-        </div>
-        <div>
-          <% if policy(@game).destroy?%>
-            <%= link_to "Delete #{@game.title}",
-                    game_path(@game),
-                    method: :delete,
-                    data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger" %>
-           <% end %>
-         </div>
-     </div>
   </div>
 
   </br>
